@@ -1,0 +1,89 @@
+Working Directory & Changes
+1. git diff
+Shows unstaged changes between your working directory and the index (staging area).
+2. git status
+Shows the current state of your working directory: staged, unstaged, and untracked files.
+3. git add file_path
+Adds specific file(s) to the staging area to be included in the next commit.
+4. git add .
+Stages all changes in the working directory.
+5. git commit -m "message"
+Commits all staged changes with a message.
+6. git commit -a -m "message"
+Automatically stages and commits tracked files (skips git add step).
+7. git commit --amend
+Modifies the last commit (can change message or add forgotten changes).
+8. git reset
+Unstages files or moves branch pointer to a previous commit (preserves or discards changes based on options).
+9. git reset HEAD~1
+Undo the last commit but keep the changes in the working directory.
+10. git reset --hard
+Discards all uncommitted changes and resets to the last commit. (Caution: cannot be undone)
+
+-------------------------------------------------------------------------------------------------
+
+Branching & Merging
+11. git branch
+Lists all branches in your repository.
+12. git checkout branch_name
+Switches to an existing branch.
+13. git checkout -b branch_name
+Creates a new branch and switches to it.
+14. git merge branch_name
+Merges the specified branch into your current branch.
+15. git branch -D branch_name
+Forcefully deletes a branch.
+
+---------------------------------------------------------------------------------------------------------
+
+Remote Repositories
+16. git push origin branch_name
+Pushes your branch and commits to the remote repository.
+17. git pull
+Fetches and merges changes from the remote repository.
+18. git clone repo_url
+Creates a local copy of a remote repository.
+
+----------------------------------------------------------------------------------------------------------
+
+Advanced Usage
+19. git rebase -i HEAD~n
+Interactively rebase last n commits for editing, squashing, or reordering.
+20. git rebase --continue / --abort / --skip
+Continue, abort, or skip during an ongoing rebase.
+21. git cherry-pick commit_id
+Applies changes from a specific commit to your current branch.
+22. git revert commit_id
+Reverts a specific commit by creating a new undo commit.
+23. git stash
+Temporarily saves your changes and gives you a clean working directory.
+24. git stash pop
+Applies the latest stashed changes and removes them from stash list.
+25. git log -stat
+Shows commit history with the list of files changed and number of insertions/deletions.
+26. git show commit_id
+Displays detailed info (diff, author, message) for a specific commit.
+27. git format-patch -1 commit_id
+Generates a .patch file for a given commit.
+28. git apply patch_file
+Applies a .patch file to your working directory.
+
+-------------------------------------------------------------------------------------------------------
+
+Additional Helpful Commands
+29. git fetch
+Downloads objects and refs from another repository without merging.
+30. git remote -v
+Shows all configured remote repositories.
+31. git log --oneline
+Displays a simplified one-line log of commits.
+32. git config --global user.name "Your Name"
+Sets your global Git username.
+33. git config --global user.email "your@email.com"
+Sets your global Git email.
+34. git clean -fd
+Removes all untracked files and directories. (Caution)
+35. git tag
+Lists tags (used for marking versions/releases).
+36. git tag -a v1.0 -m "version 1.0"
+Creates a tag with a message.
