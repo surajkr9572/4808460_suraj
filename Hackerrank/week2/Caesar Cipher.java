@@ -1,28 +1,18 @@
-StringBuilder str = new StringBuilder();
-
-for (int i = 0; i < s.length(); i++) {
-    char c = s.charAt(i);
-
-    // Check if character is a lowercase letter
-    if (c >= 'a' && c <= 'z') {
-        char ans = (char) (c + k);
-        if (ans > 'z') {
-            ans = (char) ('a' + (ans - 'z' - 1));
+public static String caesarCipher(String s, int k) {
+        StringBuilder str=new StringBuilder();
+        k=k%26;
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(c>='A' && c<='Z'){
+                str.append((char)(('A')+(c-'A'+k)%26));
+            }
+            else if(c>='a' && c<='z'){
+                str.append((char)(('a')+(c-'a'+k)%26));
+            }
+            else{
+                str.append(c);
+            }
+            
         }
-        str.append(ans);
+        return str.toString();
     }
-    // Check if character is an uppercase letter
-    else if (c >= 'A' && c <= 'Z') {
-        char ans = (char) (c + k);
-        if (ans > 'Z') {
-            ans = (char) ('A' + (ans - 'Z' - 1));
-        }
-        str.append(ans);
-    }
-    // Special characters: keep as is
-    else {
-        str.append(c);
-    }
-}
-
-return str.toString();
